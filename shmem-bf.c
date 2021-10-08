@@ -99,7 +99,8 @@ void relax(int64_t i, int64_t j, int64_t weight, int64_t nr_pes, int64_t my_pe)
                         shmem_long_put(active_vertex, &one_val, 1, pe);
                     }
                     // TODO: replace with shmem_pe_quiet()
-                    shmem_quiet();
+                    //shmem_quiet();
+                    shmem_pe_quiet(&pe, 1);
                     break;
                 }
                 else {
